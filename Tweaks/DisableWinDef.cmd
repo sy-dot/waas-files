@@ -15,4 +15,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWO
 
 bcdedit /deletevalue {current} safeboot
 shutdown /r /t 1
+
+start cmd.exe /k del /q "%UserProfile%\Desktop\DisableWinDef"
+
 exit
