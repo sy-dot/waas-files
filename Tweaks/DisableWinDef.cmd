@@ -14,8 +14,5 @@ reg delete "HKCR\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWORD /d "4" /f
 
 bcdedit /deletevalue {current} safeboot
-shutdown /r /t 1
 
-start cmd.exe /k del /q "%UserProfile%\Desktop\DisableWinDef"
-
-exit
+start cmd.exe /k "del /q "DisableWinDef.cmd" & shutdown /r /t 1 & exit"
